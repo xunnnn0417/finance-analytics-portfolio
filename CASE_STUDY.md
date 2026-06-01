@@ -1,25 +1,27 @@
-# Case Study: Market Data Research and Robustness Testing
+# Case Study｜金融市場資料研究與穩健性測試
 
 ## Overview
 
-This project is a collection of market-data research experiments I built with Python. I wanted the workflow to look closer to how an engineer or quantitative researcher would document a project: define the question, explain the data, show the method, present the results, and state the limits clearly.
+這個 project 是我用 Python 做金融市場資料研究的整理。  
+我希望它看起來不是單純的交易截圖，而是像一個工程專案：先定義問題，再說資料怎麼來、方法怎麼做、結果是什麼、限制在哪裡。
 
-The important part is not whether a backtest looks profitable. The important part is whether the result survives basic sanity checks: data quality, transaction costs, drawdown, out-of-sample behavior, and randomization stress.
+對我來說，重點不是某一條 equity curve 看起來多漂亮，而是這個結果有沒有經過基本檢查：data quality、transaction costs、drawdown、out-of-sample behavior、Monte Carlo risk。
 
 ## Project Goals
 
 | Goal | Why It Matters |
 |---|---|
-| Build repeatable data pipelines | Market research is only useful if the input data can be checked and reproduced |
-| Compare model variants | A result is more useful when it is compared against a baseline |
-| Test downside risk | Returns without drawdown and cost checks are misleading |
-| Keep failed results | Negative results help avoid overfitting and false confidence |
+| 建立可重複的 data pipeline | 沒有乾淨資料，後面的分析都不可靠 |
+| 比較不同 model variants | 不能只看單一策略，要知道它比 baseline 好在哪 |
+| 測 downside risk | return 沒有搭配 drawdown 和 cost checks 會很容易誤判 |
+| 保留 failed results | 失敗結果可以幫助排除 overfitting 和 false confidence |
 
-## Case 1: ETHUSDT Hurst / HMM Filter Research
+## Case 1：ETHUSDT Hurst / HMM Filter Research
 
 ### Question
 
-Can a trend or regime filter improve a base ETHUSDT setup, or does it only make the backtest look more complicated?
+我想知道：如果在 base setup 上加入 trend / regime filter，結果會不會更穩？  
+還是只是讓 backtest 變複雜，但實際上沒有增加價值？
 
 ### Setup
 
@@ -45,17 +47,18 @@ Can a trend or regime filter improve a base ETHUSDT setup, or does it only make 
 
 ### Takeaway
 
-The Hurst filter improved the top result in this window, while the HMM proxy reduced trade frequency and drawdown in some variants. I would not treat this as proof that the filter works generally. It is a candidate result that should be tested across more markets and time periods.
+Hurst filter 在這個測試區間有改善 top result，HMM proxy 則讓交易次數變少，也降低部分回撤。  
+但我不會直接把這個結果解讀成「filter 一定有效」。它比較像是一個 candidate，需要放到更多市場、更多時間區間繼續測。
 
-## Case 2: US100 Data Pipeline and Strict Stress Testing
+## Case 2：US100 Data Pipeline and Strict Stress Testing
 
 ### Question
 
-If a strategy candidate looks good in training, does it survive stricter costs, Monte Carlo checks, and walk-forward validation?
+如果一個 strategy candidate 在 training period 看起來不錯，那它遇到更嚴格的 costs、Monte Carlo、walk-forward 後還站得住腳嗎？
 
 ### Data Pipeline
 
-I downloaded and converted Dukascopy tick data into one-minute OHLCV bars, then generated a quality report.
+我用 Python 從 Dukascopy 下載 tick data，轉成 one-minute OHLCV bars，然後產生 data quality report。
 
 | Check | Result |
 |---|---:|
@@ -89,13 +92,14 @@ I downloaded and converted Dukascopy tick data into one-minute OHLCV bars, then 
 
 ### Takeaway
 
-This was a useful negative result. A weaker portfolio would hide it, but an engineering portfolio should show that the process can reject bad candidates. The failed stress test is evidence that the workflow is not only selecting the best historical curve.
+這個 case 的重點不是找到一個看起來很強的策略，而是它最後能淘汰不穩定的 candidates。  
+如果 portfolio 只放漂亮的結果，其實很容易變成 cherry-picking。這個 failed stress test 反而可以證明：我不是只挑最好的 historical curve，而是有做 rejection process。
 
-## Case 3: XAUUSD Full-Sample vs Walk-Forward Robustness
+## Case 3：XAUUSD Full-Sample vs Walk-Forward Robustness
 
 ### Question
 
-When a full-sample backtest looks strong, how much confidence should I actually place in it?
+如果 full-sample backtest 看起來很強，我到底該相信多少？
 
 ### Setup
 
@@ -129,20 +133,22 @@ When a full-sample backtest looks strong, how much confidence should I actually 
 
 ### Takeaway
 
-The full-sample numbers are strong, but the walk-forward results make the conclusion much less certain. This is exactly why I prefer documenting robustness checks alongside performance charts.
+Full-sample numbers 很強，但 walk-forward 結果讓我沒辦法直接下結論。  
+這也是我覺得 documenting robustness checks 很重要的原因：它可以提醒自己不要只被漂亮的 historical performance 影響。
 
 ## What I Would Improve Next
 
 | Improvement | Reason |
 |---|---|
-| Add a clean CLI runner | Make every experiment easier to reproduce |
-| Export charts from scripts automatically | Reduce manual reporting work |
-| Add config files for each experiment | Keep assumptions explicit |
-| Separate raw data from result artifacts | Keep the GitHub repo lightweight |
-| Add tests for backtest accounting | Reduce risk of incorrect PnL or drawdown calculations |
+| Add a clean CLI runner | 讓每個 experiment 可以更容易重跑 |
+| Export charts from scripts automatically | 減少手動整理報告的時間 |
+| Add config files for each experiment | 讓 assumptions 更清楚 |
+| Separate raw data from result artifacts | 保持 GitHub repo 輕量 |
+| Add tests for backtest accounting | 降低 PnL 或 drawdown 算錯的風險 |
 
 ## Conclusion
 
-The main outcome of this project is a repeatable research habit: collect data, validate data, test assumptions, compare variants, and document uncertainty. I treat strong results as candidates, not final answers, and I treat failed stress tests as useful information rather than something to hide.
+這個 project 最有價值的地方不是單一 return number，而是一套研究習慣：collect data、validate data、define assumptions、compare variants、stress-test results，最後把限制也寫下來。
 
-That is the engineering value of this portfolio: it shows the workflow behind the result.
+Strong backtests 對我來說只是 candidates。Failed stress tests 也不是浪費，因為它們可以幫我排除不穩定的想法。  
+這就是我想在這個 portfolio 裡呈現的 engineering value。

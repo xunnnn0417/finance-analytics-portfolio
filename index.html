@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,11 +15,11 @@
     <div class="hero-grid">
       <section>
         <p class="eyebrow">Market Data Research</p>
-        <h1>Testing trading ideas like engineering problems.</h1>
+        <h1>把交易想法當成工程問題來測。</h1>
         <p class="lead">
-          A small portfolio of Python research projects focused on data quality,
-          backtesting, model comparison, and robustness checks across ETHUSDT,
-          US100, and XAUUSD.
+          這是一組用 Python 做的金融市場資料研究。重點不是只放漂亮績效，
+          而是記錄資料清理、backtesting、filter comparison、Monte Carlo、
+          walk-forward 和 risk validation 的完整過程。
         </p>
         <div class="actions">
           <a class="button" href="CASE_STUDY.md">Read Case Study</a>
@@ -32,7 +32,7 @@
           <li>Python data pipelines</li>
           <li>Grid-based strategy research</li>
           <li>Walk-forward and Monte Carlo checks</li>
-          <li>Clear documentation of failed results</li>
+          <li>把 failed results 也留下來</li>
         </ul>
       </aside>
     </div>
@@ -48,7 +48,7 @@
         <article class="card">
           <span class="tag">Case 01</span>
           <h3>ETHUSDT Hurst / HMM Filters</h3>
-          <p>Compared a base setup against trend and regime filters to see whether the added complexity improved risk-adjusted behavior.</p>
+          <p>比較 base setup 和 trend / regime filters，確認多加模型是否真的改善風險與績效。</p>
           <dl>
             <div><dt>Best return</dt><dd>24.65%</dd></div>
             <div><dt>Max drawdown</dt><dd>-8.10%</dd></div>
@@ -58,7 +58,7 @@
         <article class="card">
           <span class="tag">Case 02</span>
           <h3>US100 Data + Stress Testing</h3>
-          <p>Built a one-minute data pipeline, selected candidates with a train/test split, then rejected weak setups with strict stress checks.</p>
+          <p>建立 one-minute data pipeline，再用 train/test split、cost stress 和 Monte Carlo 淘汰弱候選。</p>
           <dl>
             <div><dt>Bars checked</dt><dd>1.65M+</dd></div>
             <div><dt>Candidates</dt><dd>8</dd></div>
@@ -68,7 +68,7 @@
         <article class="card">
           <span class="tag">Case 03</span>
           <h3>XAUUSD Robustness Review</h3>
-          <p>Compared strong full-sample results with walk-forward behavior to highlight the gap between historical fit and robustness.</p>
+          <p>比較 full-sample 和 walk-forward，避免只因為歷史績效好看就下過度樂觀的結論。</p>
           <dl>
             <div><dt>Full-sample return</dt><dd>477.56%</dd></div>
             <div><dt>Max drawdown</dt><dd>-29.48%</dd></div>
@@ -86,11 +86,11 @@
       <div class="chart-grid">
         <figure>
           <img src="assets/eth-hurst-hmm-equity.svg" alt="ETH Hurst/HMM equity curves" />
-          <figcaption>ETHUSDT filter comparison: Hurst variants improved the top result in this window.</figcaption>
+          <figcaption>ETHUSDT filter comparison：Hurst variants 在這個測試區間改善 top result。</figcaption>
         </figure>
         <figure>
           <img src="assets/xauusd-cisd-equity.svg" alt="XAUUSD equity curves" />
-          <figcaption>XAUUSD full-sample candidates: strong curves, but not enough without walk-forward checks.</figcaption>
+          <figcaption>XAUUSD full-sample candidates：曲線好看，但仍需要 walk-forward 檢查。</figcaption>
         </figure>
       </div>
     </section>
@@ -112,23 +112,23 @@
           <tbody>
             <tr>
               <td>Data ingestion</td>
-              <td>Downloaded, converted, and checked market data before running tests.</td>
-              <td>Bad data can make a strategy look better or worse than it is.</td>
+              <td>下載、轉換並檢查 market data，再開始跑測試。</td>
+              <td>資料有問題，backtest 結果就沒有意義。</td>
             </tr>
             <tr>
               <td>Model comparison</td>
-              <td>Compared base setups with Hurst and HMM-style filters.</td>
-              <td>A variant only matters if it improves behavior versus a baseline.</td>
+              <td>比較 base setup、Hurst filter 和 HMM-style filter。</td>
+              <td>新的 variant 必須比 baseline 更有理由存在。</td>
             </tr>
             <tr>
               <td>Stress testing</td>
-              <td>Applied cost multipliers, Monte Carlo, walk-forward, and drawdown checks.</td>
-              <td>Robustness matters more than one optimized equity curve.</td>
+              <td>檢查 cost multipliers、Monte Carlo、walk-forward 和 drawdown。</td>
+              <td>Robustness 比單一最佳化 equity curve 更重要。</td>
             </tr>
             <tr>
               <td>Documentation</td>
-              <td>Kept tables, charts, reports, and negative results.</td>
-              <td>Research should be reviewable, not just impressive.</td>
+              <td>保留 tables、charts、reports，也保留 negative results。</td>
+              <td>研究要能被 review，不只是看起來 impressive。</td>
             </tr>
           </tbody>
         </table>
@@ -141,10 +141,9 @@
         <h2>What I Learned</h2>
       </div>
       <p>
-        The useful part of this project is not a single return number. It is the workflow:
-        collect data, validate it, define assumptions, compare variants, stress-test the results,
-        and write down the limits. Strong backtests become candidates. Failed stress tests become
-        useful filters. That is the kind of process I want my technical work to show.
+        這個 project 的價值不是單一 return number，而是流程：collect data、validate it、
+        define assumptions、compare variants、stress-test results，最後把限制寫清楚。
+        Strong backtests 是 candidates，failed stress tests 也是有用的 filter。
       </p>
     </section>
   </main>
