@@ -2,6 +2,8 @@
 
 這是一個用 Python 做金融市場資料分析的作品集。內容不是要展示「我找到多會賺錢的策略」，而是記錄我怎麼蒐集資料、整理資料、做 backtesting、比較模型，最後用 risk validation 去檢查結果是不是站得住腳。
 
+![Portfolio overview](assets/portfolio-overview-card.svg)
+
 ## 為什麼做這個
 
 我一開始只是想更有系統地研究市場，不想只靠感覺看圖或只看單一績效數字。後來慢慢把流程整理成比較像工程專案的樣子：

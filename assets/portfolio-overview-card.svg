@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#102f55"/>
+      <stop offset="1" stop-color="#23619f"/>
+    </linearGradient>
+    <style>
+      .title{font:700 58px "Microsoft JhengHei",Arial,sans-serif;fill:#fff}
+      .sub{font:400 25px "Microsoft JhengHei",Arial,sans-serif;fill:#e8f1fb}
+      .label{font:700 18px Arial,sans-serif;fill:#f3a53a;letter-spacing:2px}
+      .card-title{font:700 24px "Microsoft JhengHei",Arial,sans-serif;fill:#164b87}
+      .card-text{font:400 18px "Microsoft JhengHei",Arial,sans-serif;fill:#34465c}
+      .metric{font:800 44px Arial,sans-serif;fill:#164b87}
+      .small{font:400 17px "Microsoft JhengHei",Arial,sans-serif;fill:#607086}
+      .step{font:700 20px "Microsoft JhengHei",Arial,sans-serif;fill:#164b87}
+    </style>
+  </defs>
+  <rect width="1200" height="680" fill="#f4f7fb"/>
+  <rect width="1200" height="315" fill="url(#bg)"/>
+  <path d="M80 260 C220 70, 390 420, 560 150 S880 360, 1040 80" fill="none" stroke="#0b274b" stroke-width="5" opacity=".28"/>
+  <path d="M95 300 C270 130, 380 460, 580 200 S860 430, 1090 115" fill="none" stroke="#0f6b80" stroke-width="5" opacity=".22"/>
+  <text x="70" y="70" class="label">MARKET DATA RESEARCH</text>
+  <text x="70" y="148" class="title">金融市場資料分析作品集</text>
+  <text x="70" y="205" class="sub">Python / Backtesting / Monte Carlo / Walk-forward</text>
+  <text x="70" y="252" class="sub">重點不是只放漂亮績效，而是記錄資料清理、模型比較與風險驗證。</text>
+
+  <rect x="760" y="70" width="340" height="175" rx="14" fill="#ffffff" opacity=".15" stroke="#ffffff" stroke-opacity=".5"/>
+  <text x="790" y="118" style="font:700 25px Arial,sans-serif;fill:#fff">What this shows</text>
+  <text x="790" y="158" class="sub" style="font-size:20px">• Python data pipelines</text>
+  <text x="790" y="193" class="sub" style="font-size:20px">• Strategy research</text>
+  <text x="790" y="228" class="sub" style="font-size:20px">• Failed results kept</text>
+
+  <g transform="translate(70 355)">
+    <rect width="245" height="118" rx="12" fill="#fff" stroke="#d7dfeb"/>
+    <text x="24" y="55" class="metric">1.65M+</text>
+    <text x="24" y="88" class="small">US100 one-minute bars</text>
+  </g>
+  <g transform="translate(340 355)">
+    <rect width="245" height="118" rx="12" fill="#fff" stroke="#d7dfeb"/>
+    <text x="24" y="55" class="metric">270</text>
+    <text x="24" y="88" class="small">stress-test combinations</text>
+  </g>
+  <g transform="translate(610 355)">
+    <rect width="245" height="118" rx="12" fill="#fff" stroke="#d7dfeb"/>
+    <text x="24" y="55" class="metric">3</text>
+    <text x="24" y="88" class="small">markets researched</text>
+  </g>
+  <g transform="translate(880 355)">
+    <rect width="245" height="118" rx="12" fill="#fff" stroke="#d7dfeb"/>
+    <text x="24" y="55" class="metric">24.65%</text>
+    <text x="24" y="88" class="small">best ETH test-window return</text>
+  </g>
+
+  <g transform="translate(70 525)">
+    <rect width="196" height="88" rx="10" fill="#eaf2fb" stroke="#cfe0f4"/>
+    <text x="22" y="35" class="step">01 取得資料</text>
+    <text x="22" y="64" class="small">market history</text>
+  </g>
+  <text x="285" y="578" style="font:800 28px Arial;fill:#c58a2b">→</text>
+  <g transform="translate(320 525)">
+    <rect width="196" height="88" rx="10" fill="#eaf2fb" stroke="#cfe0f4"/>
+    <text x="22" y="35" class="step">02 清理資料</text>
+    <text x="22" y="64" class="small">quality checks</text>
+  </g>
+  <text x="535" y="578" style="font:800 28px Arial;fill:#c58a2b">→</text>
+  <g transform="translate(570 525)">
+    <rect width="196" height="88" rx="10" fill="#eaf2fb" stroke="#cfe0f4"/>
+    <text x="22" y="35" class="step">03 回測比較</text>
+    <text x="22" y="64" class="small">model variants</text>
+  </g>
+  <text x="785" y="578" style="font:800 28px Arial;fill:#c58a2b">→</text>
+  <g transform="translate(820 525)">
+    <rect width="260" height="88" rx="10" fill="#eaf2fb" stroke="#cfe0f4"/>
+    <text x="22" y="35" class="step">04 驗證與結論</text>
+    <text x="22" y="64" class="small">Monte Carlo / walk-forward</text>
+  </g>
+</svg>
