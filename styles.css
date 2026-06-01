@@ -245,11 +245,17 @@ th {
   display: inline-block;
   width: fit-content;
   margin-top: 12px;
+  margin-right: 8px;
   padding: 10px 14px;
   border-radius: 7px;
   background: var(--blue);
   color: #fff;
   text-decoration: none;
+}
+
+.button.ghost {
+  border: 1px solid rgba(255,255,255,.46);
+  background: rgba(255,255,255,.1);
 }
 
 footer {

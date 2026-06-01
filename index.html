@@ -1,33 +1,38 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>張世勤｜金融市場資料分析作品集</title>
+  <title>Finance Analytics Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="hero">
     <nav>
-      <strong>金融市場資料分析作品集</strong>
+      <strong>Finance Analytics Portfolio</strong>
       <span>Python / Backtesting / Risk Validation</span>
     </nav>
     <div class="hero-grid">
       <section>
-        <p class="eyebrow">申請東吳大學經濟學系</p>
-        <h1>從生醫訓練到經濟分析：用資料理解市場與決策</h1>
+        <p class="eyebrow">Market Data Research</p>
+        <h1>Testing trading ideas like engineering problems.</h1>
         <p class="lead">
-          我把生醫背景中重視證據、變因控制與資料判讀的訓練，延伸到金融市場研究。
-          這份作品集整理我用 Python 蒐集資料、測試策略、檢查風險，並反思結果限制的過程。
+          A small portfolio of Python research projects focused on data quality,
+          backtesting, model comparison, and robustness checks across ETHUSDT,
+          US100, and XAUUSD.
         </p>
+        <div class="actions">
+          <a class="button" href="CASE_STUDY.md">Read Case Study</a>
+          <a class="button ghost" href="https://github.com/xunnnn0417/finance-analytics-portfolio">View GitHub</a>
+        </div>
       </section>
       <aside class="hero-card">
-        <span>核心能力</span>
+        <span>What this shows</span>
         <ul>
-          <li>金融資料清理與品質檢查</li>
-          <li>多市場策略回測與模型比較</li>
-          <li>Monte Carlo、成本壓力、walk-forward 驗證</li>
-          <li>用報告與表格呈現結論</li>
+          <li>Python data pipelines</li>
+          <li>Grid-based strategy research</li>
+          <li>Walk-forward and Monte Carlo checks</li>
+          <li>Clear documentation of failed results</li>
         </ul>
       </aside>
     </div>
@@ -36,38 +41,38 @@
   <main>
     <section class="section">
       <div class="section-head">
-        <p class="eyebrow">Portfolio Overview</p>
-        <h2>作品總覽</h2>
+        <p class="eyebrow">Projects</p>
+        <h2>Research Cases</h2>
       </div>
       <div class="cards">
         <article class="card">
           <span class="tag">Case 01</span>
-          <h3>ETHUSDT Hurst / HMM 濾網研究</h3>
-          <p>用兩年 ETHUSDT perpetual 資料，比較 BASE、Hurst 與 HMM regime proxy 對策略績效與回撤的影響。</p>
+          <h3>ETHUSDT Hurst / HMM Filters</h3>
+          <p>Compared a base setup against trend and regime filters to see whether the added complexity improved risk-adjusted behavior.</p>
           <dl>
-            <div><dt>最佳報酬</dt><dd>24.65%</dd></div>
-            <div><dt>最大回撤</dt><dd>-8.10%</dd></div>
-            <div><dt>交易數</dt><dd>31</dd></div>
+            <div><dt>Best return</dt><dd>24.65%</dd></div>
+            <div><dt>Max drawdown</dt><dd>-8.10%</dd></div>
+            <div><dt>Trades</dt><dd>31</dd></div>
           </dl>
         </article>
         <article class="card">
           <span class="tag">Case 02</span>
-          <h3>US100 資料清理與嚴格壓力測試</h3>
-          <p>下載五年 US100 一分鐘資料，檢查資料缺漏與異常，再用 70/30 split、成本壓力與 Monte Carlo 驗證候選。</p>
+          <h3>US100 Data + Stress Testing</h3>
+          <p>Built a one-minute data pipeline, selected candidates with a train/test split, then rejected weak setups with strict stress checks.</p>
           <dl>
-            <div><dt>資料筆數</dt><dd>165 萬+</dd></div>
-            <div><dt>候選數</dt><dd>8</dd></div>
-            <div><dt>結論</dt><dd>嚴格淘汰</dd></div>
+            <div><dt>Bars checked</dt><dd>1.65M+</dd></div>
+            <div><dt>Candidates</dt><dd>8</dd></div>
+            <div><dt>Verdict</dt><dd>Rejected</dd></div>
           </dl>
         </article>
         <article class="card">
           <span class="tag">Case 03</span>
-          <h3>XAUUSD 五年策略穩定性檢查</h3>
-          <p>檢查黃金策略在全樣本、成本壓力與 walk-forward 下的表現，示範如何避免只看漂亮的歷史績效。</p>
+          <h3>XAUUSD Robustness Review</h3>
+          <p>Compared strong full-sample results with walk-forward behavior to highlight the gap between historical fit and robustness.</p>
           <dl>
-            <div><dt>全樣本最佳</dt><dd>477.56%</dd></div>
-            <div><dt>最大回撤</dt><dd>-29.48%</dd></div>
-            <div><dt>評級</dt><dd>B</dd></div>
+            <div><dt>Full-sample return</dt><dd>477.56%</dd></div>
+            <div><dt>Max drawdown</dt><dd>-29.48%</dd></div>
+            <div><dt>Grade</dt><dd>B</dd></div>
           </dl>
         </article>
       </div>
@@ -76,57 +81,54 @@
     <section class="section band">
       <div class="section-head">
         <p class="eyebrow">Evidence</p>
-        <h2>關鍵圖表</h2>
+        <h2>Charts</h2>
       </div>
       <div class="chart-grid">
         <figure>
           <img src="assets/eth-hurst-hmm-equity.svg" alt="ETH Hurst/HMM equity curves" />
-          <figcaption>ETHUSDT：Hurst / HMM 濾網回測曲線</figcaption>
+          <figcaption>ETHUSDT filter comparison: Hurst variants improved the top result in this window.</figcaption>
         </figure>
         <figure>
           <img src="assets/xauusd-cisd-equity.svg" alt="XAUUSD equity curves" />
-          <figcaption>XAUUSD：五年策略候選曲線</figcaption>
+          <figcaption>XAUUSD full-sample candidates: strong curves, but not enough without walk-forward checks.</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
-        <p class="eyebrow">Summary Table</p>
-        <h2>研究整理表</h2>
+        <p class="eyebrow">Process</p>
+        <h2>Engineering Workflow</h2>
       </div>
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>案例</th>
-              <th>期間</th>
-              <th>方法</th>
-              <th>主要發現</th>
-              <th>書審價值</th>
+              <th>Step</th>
+              <th>What I Did</th>
+              <th>Why It Matters</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>ETHUSDT</td>
-              <td>2024-2026</td>
-              <td>Hurst / HMM proxy</td>
-              <td>最佳 Hurst 組合 24.65%，高於 BASE 22.05%</td>
-              <td>模型比較、金融資料分析</td>
+              <td>Data ingestion</td>
+              <td>Downloaded, converted, and checked market data before running tests.</td>
+              <td>Bad data can make a strategy look better or worse than it is.</td>
             </tr>
             <tr>
-              <td>US100</td>
-              <td>2021-2026 / 2025-2026</td>
-              <td>資料清理、70/30 split、Monte Carlo</td>
-              <td>多數候選在重成本壓力下失敗</td>
-              <td>風險意識、嚴格驗證</td>
+              <td>Model comparison</td>
+              <td>Compared base setups with Hurst and HMM-style filters.</td>
+              <td>A variant only matters if it improves behavior versus a baseline.</td>
             </tr>
             <tr>
-              <td>XAUUSD</td>
-              <td>2021-2026</td>
-              <td>全樣本、walk-forward、成本壓力</td>
-              <td>全樣本亮眼，但樣本外不穩定</td>
-              <td>避免過度最佳化</td>
+              <td>Stress testing</td>
+              <td>Applied cost multipliers, Monte Carlo, walk-forward, and drawdown checks.</td>
+              <td>Robustness matters more than one optimized equity curve.</td>
+            </tr>
+            <tr>
+              <td>Documentation</td>
+              <td>Kept tables, charts, reports, and negative results.</td>
+              <td>Research should be reviewable, not just impressive.</td>
             </tr>
           </tbody>
         </table>
@@ -136,19 +138,19 @@
     <section class="section conclusion">
       <div>
         <p class="eyebrow">Conclusion</p>
-        <h2>結論</h2>
+        <h2>What I Learned</h2>
       </div>
       <p>
-        這份作品集讓我學到，金融市場分析不能只追求單一漂亮績效，而是要建立可以被檢查的研究流程：
-        取得資料、清理資料、建立假設、回測模型、比較結果，最後用壓力測試與樣本外驗證修正判斷。
-        這樣的自學經驗也讓我更確定，進入經濟學系後，我希望系統性補強統計、計量經濟、金融市場與產業分析能力。
+        The useful part of this project is not a single return number. It is the workflow:
+        collect data, validate it, define assumptions, compare variants, stress-test the results,
+        and write down the limits. Strong backtests become candidates. Failed stress tests become
+        useful filters. That is the kind of process I want my technical work to show.
       </p>
-      <a class="button" href="report.md">查看完整報告</a>
     </section>
   </main>
 
   <footer>
-    <span>本作品集為學習與書審展示用途，不構成投資建議。</span>
+    <span>Research project only. Not investment advice.</span>
   </footer>
 </body>
 </html>

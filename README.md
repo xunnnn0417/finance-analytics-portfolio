@@ -1,46 +1,61 @@
-# 金融市場資料分析作品集
+# Finance Analytics Portfolio
 
-> 這是我準備申請東吳大學經濟學系時整理的作品。內容不是要證明我會交易，而是想呈現我怎麼用資料、程式和風險驗證去理解金融市場。
+Market data research projects built with Python. This repository documents how I collect raw market data, run strategy research, compare filters, and stress-test results instead of only showing the best-looking backtest.
 
-## 專案簡介
+## Why This Exists
 
-我原本是生醫相關背景，學習過程裡常接觸觀察、假設、資料判讀和驗證。後來接觸金融市場後，我發現市場分析其實也很需要這種思考方式：不能只看直覺或單一結果，而是要問資料從哪裡來、模型怎麼測、結果有沒有經得起壓力測試。
+I started this as a personal research workflow for understanding markets with data. The goal is not to present a trading signal or investment advice. The goal is to show the engineering process behind market research:
 
-所以我把自己做過的幾個 Python 分析作品整理成這份作品集：
+- collect and validate raw data
+- define testable assumptions
+- run parameter sweeps
+- compare model variants
+- check drawdown, costs, walk-forward behavior, and Monte Carlo risk
+- document both good and bad results
 
-| 案例 | 主題 | 工具 | 可展示能力 |
+## Projects
+
+| Project | Question | Method | Key Finding |
 |---|---|---|---|
-| ETHUSDT 兩年回測 | Hurst / HMM 濾網與策略比較 | Python、CSV、SVG | 模型比較、參數測試、績效與回撤分析 |
-| US100 一分鐘資料研究 | 五年資料下載、清理、壓力測試 | Python、Dukascopy、Monte Carlo | 資料工程、風險驗證、樣本外觀念 |
-| XAUUSD 五年壓力測試 | 黃金策略穩定性與 walk-forward | Python、CSV、壓力測試 | 嚴格驗證、成本假設、結論判斷 |
+| ETHUSDT Hurst/HMM filter research | Can trend/regime filters improve a base setup? | Python backtest, Hurst filters, lightweight HMM proxy | Best Hurst variant returned 24.65% with -8.10% max drawdown in this test window |
+| US100 data and stress testing | Does a selected strategy survive stricter assumptions? | 1-minute data pipeline, 70/30 split, cost stress, Monte Carlo | Selected candidates failed strict stress checks, which helped reject weak setups |
+| XAUUSD robustness check | Do strong full-sample results hold up out of sample? | 5-year backtest, walk-forward, cost stress | Full-sample results looked strong, but walk-forward behavior was unstable |
 
-## 我整理後的結論
+## Highlights
 
-1. 只看回測報酬其實很危險，因為漂亮的數字可能只是剛好適合那段資料。
-2. 我會同時看最大回撤、交易次數、成本壓力、Monte Carlo 和樣本外表現，避免只挑對自己有利的結果。
-3. ETHUSDT 的 Hurst 濾網在這次測試中讓最佳組合由 BASE 22.05% 提升到 24.65%，但我不會因此直接說它一定有效，還是需要更多期間和市場驗證。
-4. US100 的嚴格壓力測試中，多數候選最後沒有通過。這個結果雖然不好看，但對我來說反而重要，因為它讓我學會把失敗也當成研究的一部分。
-5. XAUUSD 的全樣本結果看起來很亮眼，但 walk-forward 不穩定，這提醒我不能把全樣本最佳化結果直接當成結論。
-
-## 檔案
-
-| 檔案 | 用途 |
+| Area | Evidence |
 |---|---|
-| `index.html` | 可上傳 GitHub Pages 的視覺化首頁 |
-| `report.md` | 完整書審報告版 |
-| `data/summary.csv` | 三個案例摘要表 |
-| `data/*.csv` | 原始結果表格節錄 |
-| `assets/*.svg` | 回測曲線圖 |
+| Data engineering | Downloaded and validated 1.65M+ US100 one-minute bars |
+| Backtesting | Multi-timeframe and RR grid tests across ETHUSDT, US100, and XAUUSD |
+| Risk validation | Max drawdown, cost stress, Monte Carlo, walk-forward, and trade distribution checks |
+| Documentation | Case study, summary tables, charts, and source-file index |
 
-## 線上連結
+## Repository Structure
 
-- GitHub repo: https://github.com/xunnnn0417/finance-analytics-portfolio
-- GitHub Pages: https://xunnnn0417.github.io/finance-analytics-portfolio/
+```text
+.
+├── index.html                 # visual portfolio page
+├── styles.css                 # static page styling
+├── CASE_STUDY.md              # full project write-up
+├── source-files.md            # local source-file index
+├── assets/                    # exported equity-curve charts
+└── data/                      # selected result tables
+```
 
-## 書審可用一句話
+## Results Snapshot
 
-我嘗試用金融市場資料進行策略回測與風險驗證，從資料清理、模型比較到樣本外測試，訓練自己用數據而不是直覺判斷市場現象。這段自學經驗也讓我更確定想進入經濟學系，系統性學習個體經濟、統計、計量經濟與金融市場分析。
+| Case | Result | Interpretation |
+|---|---|---|
+| ETHUSDT HURST_200_055 | 24.65% return, -8.10% max DD, 31 trades | Interesting candidate, but needs more validation |
+| US100 strict stress test | 8 selected candidates, all failed | Useful negative result; prevents overfitting |
+| XAUUSD 5-year full sample | 477.56% return, -29.48% max DD on top candidate | Strong historical result, but not reliable alone |
 
-## 注意
+## Live Page
 
-本作品集為學習與研究展示，不構成投資建議，也不代表任何策略可直接用於實際交易。
+If GitHub Pages is enabled for this repository:
+
+https://xunnnn0417.github.io/finance-analytics-portfolio/
+
+## Notes
+
+This is a research and engineering portfolio, not financial advice. The included results are historical tests and should not be interpreted as live trading recommendations.

@@ -1,37 +1,33 @@
-# 來源檔案索引
+# Data and Artifact Notes
 
-這份作品集由下列本機檔案整理而成。大型原始 CSV 沒有完整複製進作品集，避免 GitHub 檔案過大。
+This repository intentionally includes selected result artifacts instead of large raw market datasets.
 
-## ETHUSDT
+## Included
 
-| 類型 | 檔案 |
+| Path | Description |
 |---|---|
-| 報告 | `C:\Users\User\Desktop\策略and程式\bybit_eth_cisd_2y_hurst_hmm_top10_report.txt` |
-| 程式 | `C:\Users\User\Desktop\策略and程式\backtest_bybit_eth_cisd_hurst_hmm_2y.py` |
-| 表格 | `C:\Users\User\Desktop\策略and程式\bybit_eth_cisd_2y_hurst_hmm_grid_top30.csv` |
-| 圖表 | `C:\Users\User\Desktop\策略and程式\bybit_eth_cisd_2y_hurst_hmm_top10_equity_curves.svg` |
+| `data/eth-hurst-hmm-top30.csv` | Top ETHUSDT Hurst/HMM backtest variants |
+| `data/us100-walk-forward.csv` | US100 walk-forward result sample |
+| `data/xauusd-top-stability.csv` | XAUUSD stability-ranked candidates |
+| `assets/eth-hurst-hmm-equity.svg` | ETHUSDT equity-curve comparison |
+| `assets/btc-filter-suite-equity.svg` | BTC filter-suite equity-curve export |
+| `assets/xauusd-cisd-equity.svg` | XAUUSD equity-curve comparison |
 
-## US100
+## Not Included
 
-| 類型 | 檔案 |
+| Artifact | Reason |
 |---|---|
-| 資料下載程式 | `C:\Users\User\Desktop\策略and程式\download_dukascopy_us100_m1.py` |
-| 資料品質報告 | `C:\Users\User\Desktop\策略and程式\dukascopy_us100_m1_2021-05-28_2026-05-28.report.txt` |
-| 壓力測試報告 | `C:\Users\User\Desktop\策略and程式\us100_results_no_filter_strict_oos_stress_heavy_cost\stress_test_master_report.txt` |
-| Monte Carlo | `C:\Users\User\Desktop\策略and程式\us100_results_no_filter_strict_oos_stress_heavy_cost\monte_carlo_report.txt` |
+| Full raw one-minute/tick datasets | Too large for a lightweight portfolio repo |
+| Local cache folders and Python environments | Not part of the deliverable |
+| Exchange credentials or API secrets | Not used or committed |
 
-## XAUUSD
+## Original Data Sources
 
-| 類型 | 檔案 |
+| Market | Source Type |
 |---|---|
-| 壓力測試 | `C:\Users\User\Desktop\策略and程式\dukascopy_xauusd\results\cisd_5y_master_stress_nofilter_20260529\stress_test_master_report.txt` |
-| Walk-forward | `C:\Users\User\Desktop\策略and程式\dukascopy_xauusd\results\cisd_5y_master_stress_nofilter_20260529\walk_forward_report.txt` |
-| 圖表 | `C:\Users\User\Desktop\策略and程式\dukascopy_xauusd\results\cisd_5y_master_stress_nofilter_20260529\top10_equity_curves.svg` |
+| ETHUSDT / BTCUSDT | Exchange market data used for historical research |
+| US100 / XAUUSD | Dukascopy historical market data exports |
 
-## 延伸自學
+## Reproducibility Notes
 
-| 主題 | 檔案 |
-|---|---|
-| Qlib / LightGBM Alpha158 | `C:\Users\User\Desktop\策略and程式\workflow_config_lightgbm_Alpha158.yaml` |
-| TradingView MCP | `C:\Users\User\Desktop\tradingview-mcp\README.md` |
-| Phone Bridge | `C:\Users\User\Desktop\策略and程式\phone-bridge\README.md` |
+The repository is structured as a portfolio artifact, not a full production research package. The next engineering step would be to add a clean CLI runner, config files for each experiment, and unit tests for PnL accounting.
