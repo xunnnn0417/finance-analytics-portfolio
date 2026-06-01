@@ -62,9 +62,26 @@ US100 的 8 個候選是從 training period 選出來的，但在更嚴格的 co
 ├── source-files.md            # data/artifact notes
 ├── index.html                 # static portfolio page
 ├── styles.css                 # page styling
+├── scripts/                   # artifact checks and result summaries
 ├── assets/                    # exported charts
 └── data/                      # selected CSV result tables
 ```
+
+## Scripts
+
+這個 repo 目前沒有放完整 raw market data，所以 `scripts/` 先提供可以直接重跑的 artifact 檢查與摘要工具。
+
+```bash
+python scripts/check_artifacts.py
+python scripts/summarize_results.py
+```
+
+| Script | Purpose |
+|---|---|
+| `scripts/check_artifacts.py` | 檢查必要 CSV、圖表和欄位是否存在 |
+| `scripts/summarize_results.py` | 讀取 `data/` 裡的 CSV，輸出簡短 Markdown 結果摘要 |
+
+完整 backtest runner 會需要 raw tick/minute data 和更乾淨的 config 設計，所以目前先不假裝這份 repo 可以完整重跑所有研究。
 
 ## Selected Artifacts
 
