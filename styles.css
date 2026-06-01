@@ -130,6 +130,35 @@ h2 {
   gap: 16px;
 }
 
+.metric-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.metric-strip div {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.metric-strip strong {
+  display: block;
+  color: var(--blue);
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.metric-strip span {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
 .card {
   min-height: 310px;
   padding: 20px;
@@ -181,6 +210,56 @@ dd { margin: 0; font-weight: 700; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
+}
+
+.process-section {
+  padding-top: 10px;
+}
+
+.flow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.flow div {
+  position: relative;
+  min-height: 146px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.flow div::after {
+  content: "→";
+  position: absolute;
+  top: 48%;
+  right: -14px;
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.flow div:last-child::after {
+  display: none;
+}
+
+.flow strong {
+  display: block;
+  color: var(--gold);
+  font-size: 13px;
+}
+
+.flow span {
+  display: block;
+  margin: 10px 0 8px;
+  color: var(--blue);
+  font-weight: 800;
+}
+
+.flow small {
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 figure {
@@ -267,8 +346,12 @@ footer {
 }
 
 @media (max-width: 860px) {
-  .hero-grid, .cards, .chart-grid, .conclusion {
+  .hero-grid, .cards, .chart-grid, .conclusion, .metric-strip, .flow {
     grid-template-columns: 1fr;
+  }
+
+  .flow div::after {
+    display: none;
   }
 
   nav {
