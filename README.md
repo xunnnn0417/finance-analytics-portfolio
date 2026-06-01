@@ -32,6 +32,11 @@
 | `data/*.csv` | 原始結果表格節錄 |
 | `assets/*.svg` | 回測曲線圖 |
 
+## 線上連結
+
+- GitHub repo: https://github.com/xunnnn0417/finance-analytics-portfolio
+- GitHub Pages: https://xunnnn0417.github.io/finance-analytics-portfolio/
+
 ## 書審可用一句話
 
 我嘗試用金融市場資料進行策略回測與風險驗證，從資料清理、模型比較到樣本外測試，訓練自己用數據而不是直覺判斷市場現象。這段自學經驗也讓我更確定想進入經濟學系，系統性學習個體經濟、統計、計量經濟與金融市場分析。
