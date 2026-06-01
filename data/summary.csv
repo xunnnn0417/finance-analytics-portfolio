@@ -1,0 +1,4 @@
+case,period,method,key_result,portfolio_value
+ETHUSDT Hurst/HMM,2024-05-26 to 2026-05-26,Python backtest + Hurst/HMM proxy,HURST_200_055 return 24.65% maxDD -8.10%,Model comparison and risk analysis
+US100 Stress Test,2025-05-28 to 2026-05-28,70/30 split + Monte Carlo + cost stress,8 selected candidates all failed under strict stress,Risk validation and research discipline
+XAUUSD Stability,2021-05-28 to 2026-05-28,Full sample + walk-forward + cost stress,High full-sample return but weak walk-forward robustness,Understanding overfitting and sample-out validation

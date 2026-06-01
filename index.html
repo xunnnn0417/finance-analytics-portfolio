@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>張世勤｜金融市場資料分析作品集</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav>
+      <strong>金融市場資料分析作品集</strong>
+      <span>Python / Backtesting / Risk Validation</span>
+    </nav>
+    <div class="hero-grid">
+      <section>
+        <p class="eyebrow">申請東吳大學經濟學系</p>
+        <h1>從生醫訓練到經濟分析：用資料理解市場與決策</h1>
+        <p class="lead">
+          我將生醫背景中重視證據、變因控制與資料判讀的訓練，延伸到金融市場研究。
+          這份作品集整理我用 Python 進行資料蒐集、策略回測、風險驗證與樣本外檢查的過程。
+        </p>
+      </section>
+      <aside class="hero-card">
+        <span>核心能力</span>
+        <ul>
+          <li>金融資料清理與品質檢查</li>
+          <li>多市場策略回測與模型比較</li>
+          <li>Monte Carlo、成本壓力、walk-forward 驗證</li>
+          <li>用報告與表格呈現結論</li>
+        </ul>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="section-head">
+        <p class="eyebrow">Portfolio Overview</p>
+        <h2>作品總覽</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="tag">Case 01</span>
+          <h3>ETHUSDT Hurst / HMM 濾網研究</h3>
+          <p>用兩年 ETHUSDT perpetual 資料，比較 BASE、Hurst 與 HMM regime proxy 對策略績效與回撤的影響。</p>
+          <dl>
+            <div><dt>最佳報酬</dt><dd>24.65%</dd></div>
+            <div><dt>最大回撤</dt><dd>-8.10%</dd></div>
+            <div><dt>交易數</dt><dd>31</dd></div>
+          </dl>
+        </article>
+        <article class="card">
+          <span class="tag">Case 02</span>
+          <h3>US100 資料清理與嚴格壓力測試</h3>
+          <p>下載五年 US100 一分鐘資料，檢查資料缺漏與異常，再用 70/30 split、成本壓力與 Monte Carlo 驗證候選。</p>
+          <dl>
+            <div><dt>資料筆數</dt><dd>165 萬+</dd></div>
+            <div><dt>候選數</dt><dd>8</dd></div>
+            <div><dt>結論</dt><dd>嚴格淘汰</dd></div>
+          </dl>
+        </article>
+        <article class="card">
+          <span class="tag">Case 03</span>
+          <h3>XAUUSD 五年策略穩定性檢查</h3>
+          <p>檢查黃金策略在全樣本、成本壓力與 walk-forward 下的表現，示範如何避免只看漂亮的歷史績效。</p>
+          <dl>
+            <div><dt>全樣本最佳</dt><dd>477.56%</dd></div>
+            <div><dt>最大回撤</dt><dd>-29.48%</dd></div>
+            <div><dt>評級</dt><dd>B</dd></div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="section-head">
+        <p class="eyebrow">Evidence</p>
+        <h2>關鍵圖表</h2>
+      </div>
+      <div class="chart-grid">
+        <figure>
+          <img src="assets/eth-hurst-hmm-equity.svg" alt="ETH Hurst/HMM equity curves" />
+          <figcaption>ETHUSDT：Hurst / HMM 濾網回測曲線</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/xauusd-cisd-equity.svg" alt="XAUUSD equity curves" />
+          <figcaption>XAUUSD：五年策略候選曲線</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <p class="eyebrow">Summary Table</p>
+        <h2>研究整理表</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>案例</th>
+              <th>期間</th>
+              <th>方法</th>
+              <th>主要發現</th>
+              <th>書審價值</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ETHUSDT</td>
+              <td>2024-2026</td>
+              <td>Hurst / HMM proxy</td>
+              <td>最佳 Hurst 組合 24.65%，高於 BASE 22.05%</td>
+              <td>模型比較、金融資料分析</td>
+            </tr>
+            <tr>
+              <td>US100</td>
+              <td>2021-2026 / 2025-2026</td>
+              <td>資料清理、70/30 split、Monte Carlo</td>
+              <td>多數候選在重成本壓力下失敗</td>
+              <td>風險意識、嚴格驗證</td>
+            </tr>
+            <tr>
+              <td>XAUUSD</td>
+              <td>2021-2026</td>
+              <td>全樣本、walk-forward、成本壓力</td>
+              <td>全樣本亮眼，但樣本外不穩定</td>
+              <td>避免過度最佳化</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section conclusion">
+      <div>
+        <p class="eyebrow">Conclusion</p>
+        <h2>結論</h2>
+      </div>
+      <p>
+        這份作品集讓我學到，金融市場分析不能只追求單一漂亮績效，而是要建立可檢查的研究流程：
+        取得資料、清理資料、建立假設、回測模型、比較結果，最後用壓力測試與樣本外驗證修正判斷。
+        這樣的自學經驗也讓我更確定，進入經濟學系後，我希望系統性補強統計、計量經濟、金融市場與產業分析能力。
+      </p>
+      <a class="button" href="report.md">查看完整報告</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>本作品集為學習與書審展示用途，不構成投資建議。</span>
+  </footer>
+</body>
+</html>
